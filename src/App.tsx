@@ -1,26 +1,25 @@
 import React from 'react';
+import { Route } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 
-import './App.css';
-import logo from './logo.svg';
+import './App.scss';
+import NewPairsComponent from './Components/NewPairsComponent/NewPairsComponent';
+import PairsComponent from './Components/PairsComponent/PairsComponent';
+import TeamsComponent from './Components/TeamsComponent/TeamsComponent';
+
 
 const App: React.FC = () => {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <h1 className='a'>Pairing App</h1>
       </header>
-    </div>
+
+      <BrowserRouter>
+        <Route exact path='/' component={TeamsComponent} />
+        <Route exact path='/:teamName' component={PairsComponent} />
+      </BrowserRouter>
+    </>
   );
 };
 
