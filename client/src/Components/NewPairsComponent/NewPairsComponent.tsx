@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { RouteComponentProps } from 'react-router';
 
 import PairSpinner from '../../PairSpinner/PairSpinner';
 import Pair from '../PairComponent/PairComponent';

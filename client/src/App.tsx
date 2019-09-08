@@ -3,7 +3,6 @@ import { Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 
 import './App.scss';
-import NewPairsComponent from './Components/NewPairsComponent/NewPairsComponent';
 import PairsComponent from './Components/PairsComponent/PairsComponent';
 import TeamsComponent from './Components/TeamsComponent/TeamsComponent';
 
@@ -22,6 +21,5 @@ const App: React.FC = () => {
     </>
   );
 };
-
 
 export default App;

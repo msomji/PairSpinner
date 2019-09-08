@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Route, RouteComponentProps } from 'react-router';
-import { Link } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router';
 
 import NewPairsComponent from '../NewPairsComponent/NewPairsComponent';
 import Pair from '../PairComponent/PairComponent';
