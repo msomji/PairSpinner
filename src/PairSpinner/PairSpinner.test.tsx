@@ -47,7 +47,15 @@ describe('PairSpinner', () => {
     });
 
     it('should return oldest combination of paring it all have been considered ', () => {
-      expect(subject.newPairCombinations(allPossibleCombinations, allPossibleCombinations)).toEqual(['a', 'd']);
+      const actual = subject.newPairCombinations(allPossibleCombinations, allPossibleCombinations).join();
+
+      const expectedResult = actual === ['a', 'b'].join() ||
+        actual === ['a', 'c'].join() ||
+        actual === ['a', 'd'].join();
+      expect(expectedResult).toBeTruthy();
+    });
+    it('should return the only possible combination ', () => {
+      expect(subject.newPairCombinations([['a', 'b']], [['a', 'b'], ['a', 'd']])).toEqual(['a', 'b']);
     });
   });
 
