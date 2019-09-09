@@ -12,7 +12,6 @@ export default function NewPairsComponent(props: NewPairsComponentProps) {
   const pairs: Array<Array<string>> = new PairSpinner().spin(props.teamMembers, props.sortedPreviousPairings);
   const [getPairs, setPairs] = useState(pairs);
   const pairSpin: () => void = () => {
-    console.log('spinning');
     setPairs(new PairSpinner().spin(props.teamMembers, props.sortedPreviousPairings));
   };
 
