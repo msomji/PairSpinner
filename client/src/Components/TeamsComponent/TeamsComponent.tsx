@@ -10,14 +10,12 @@ export default function TeamsComponent() {
     useEffect(() => {
         axios.get('http://localhost:8080/api/teams')
             .then((data) => {
-                const teamEntity: Array<TeamEntity> = data.data;
-                setTeams(teamEntity.map(t => t.teamName));
+                setTeams(data.data.map((t: TeamEntity) => t.teamName));
                 setLoading(true);
             });
     }, []);
 
     if (loaded) {
-
         return (
             <>
                 <p>Select your team:</p>

@@ -1,0 +1,85 @@
+
+###
+POST http://localhost:8080/api/teams
+Content-Type: application/json
+
+{
+  "teamName": "thisNewTeasdam"
+}
+###
+GET http://localhost:8080/api/teams
+
+###
+GET http://localhost:8080/api/teams/5d76deb9b1f96e6efd2bad3c
+
+###
+DELETE  http://localhost:8080/api/teams/5d76db0163abcf6ea11b1a51
+
+
+###
+PUT http://localhost:8080/api/teams/5d76deb9b1f96e6efd2bad3c
+Content-Type: application/json
+
+{
+  "teamName": "newName"
+}
+
+
+###
+POST http://localhost:8080/api/pairs
+Content-Type: application/json
+
+  {
+    "spinDate": "2019-09-15T04:00:00.000Z",
+    "pairs": [
+      [
+        "A",
+        "B"
+      ],
+      [
+        "C",
+        "D"
+      ],
+      [
+        "E",
+        "F"
+      ]
+    ],
+    "teamName": "trial2"
+  },
+###
+GET http://localhost:8080/api/pairs
+
+###
+GET http://localhost:8080/api/pairs/5d756b38e7179a084efa148c
+
+###
+DELETE  http://localhost:8080/api/pairs/5d76db0163abcf6ea11b1a51
+
+
+###
+PUT http://localhost:8080/api/pairs/5d756b38e7179a084eDa148c
+Content-Type: application/json
+
+{
+  "spinDate": "2019-09-15T04:00:00.000Z",
+  "pairs": [
+    [
+      "John",
+      "Mary"
+    ],
+    [
+      "Oudix",
+      "George"
+    ],
+    [
+      "April",
+      "Mike"
+    ],
+    [
+      "Callie",
+      "Mandy"
+    ]
+  ],
+  "teamName": "trial"
+}
