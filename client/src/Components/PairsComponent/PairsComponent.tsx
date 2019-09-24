@@ -1,55 +1,58 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { RouteComponentProps } from 'react-router';
 
+import { fetchAllPairs, saveNewPairSpin } from '../../Services/PairsService/PairsService';
 import PairsEntity from '../../models/pairsEntity';
-import NewPairsComponent from '../NewPairsComponent/NewPairsComponent';
 import Pair from '../PairComponent/PairComponent';
+import PairSpinnerComponent from '../PairSpinnerComponent/PairSpinnerComponent';
 interface PairsRouteParams {
   teamName: string;
 }
 
 export default function PairsComponent(props: RouteComponentProps<PairsRouteParams>) {
-  const [loaded, setLoading] = useState(false);
-  const [pairs, setPairs] = useState([{
-    teamName: '',
-    spinDate: '',
-    pairs: [],
-  } as PairsEntity]);
+  const [loaded, setLoaded] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const [pairs, setPairs] = useState<Array<PairsEntity>>([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/pairs')
-      .then((data) => {
-        const pairsEntity: Array<PairsEntity> = data.data;
-        setPairs(pairsEntity);
-        setLoading(true);
+    fetchAllPairs()
+      .then(pairEntities => {
+        setPairs(pairEntities);
+        setLoaded(true);
       });
-  }, []);
+  }, [saved]);
 
-  const allTeamMembers: (namesArray: Array<Array<string>>) => Array<string> = (namesArrays) =>
-    namesArrays.flat()
-      .reduce((initial: string, current: string) => !initial.includes(current) ? initial += (' ' + current) : initial, '')
-      .split(' ')
-      .filter(Boolean);
-
-  const sortedPreviousPairings: Array<Array<string>> = pairs
+  const teamPairs: Array<Array<string>> = pairs
     .filter(team => team.teamName === props.match.params.teamName)
     .map(team => team.pairs)
-    .flatMap(r => r)
-    .map(s => s.map(d => d.toLowerCase()))
-    .map(d => d.sort());
+    .flatMap(pairArray => pairArray);
 
-  const teamMembers = allTeamMembers(sortedPreviousPairings);
+  const sortedPreviousPairPartners: Array<Array<string>> = teamPairs
+    .map(currentPair => currentPair.map(pairPartner => pairPartner.toLowerCase()))
+    .map(currentPair => currentPair.sort());
+
+  const allTeamMembers: (namesArray: Array<Array<string>>) => Array<string> = (namesArrays) =>
+    namesArrays
+      .flat()
+      .reduce((initial: Array<string>, current: string) =>
+        !initial.includes(current) ? [...initial, current] : initial, []);
+
+  const teamMembers = allTeamMembers(teamPairs);
+
+  const saveNewPairings: (newPairings: Array<Array<string>>) => void = (newPairings) => {
+    saveNewPairSpin(props.match.params.teamName, newPairings);
+    setSaved(!saved);
+  };
 
   if (loaded) {
     return (
       <>
         <p>Your Team:  {teamMembers.join(', ')}</p>
-        <NewPairsComponent
-          sortedPreviousPairings={sortedPreviousPairings}
+        <PairSpinnerComponent
+          sortedPreviousPairings={sortedPreviousPairPartners}
           teamMembers={teamMembers}
-
-        ></NewPairsComponent>
+          saveNewPairings={saveNewPairings}
+        ></PairSpinnerComponent>
         <hr />
         <p>previous pairs for {props.match.params.teamName}</p>
         {pairs
