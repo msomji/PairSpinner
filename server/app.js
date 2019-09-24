@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require("express");
 const bodyParser = require('body-parser')
 const app = express();
@@ -8,7 +10,7 @@ require('./database');
 const port = process.env.PORT || 8080; // default port to listen
 
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", `${process.env.ALLOWED_ORIGINS}`);
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
