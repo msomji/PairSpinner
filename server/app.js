@@ -5,7 +5,7 @@ const app = express();
 const pairs = require('./api/pairs');
 const teams = require('./api/teams');
 require('./database');
-const port = 8080; // default port to listen
+const port = process.env.PORT || 8080; // default port to listen
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from

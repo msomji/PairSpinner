@@ -29,24 +29,30 @@ Content-Type: application/json
 POST http://localhost:8080/api/pairs
 Content-Type: application/json
 
-  {
-    "spinDate": "2019-09-15T04:00:00.000Z",
-    "pairs": [
-      [
-        "A",
-        "B"
-      ],
-      [
-        "C",
-        "D"
-      ],
-      [
-        "E",
-        "F"
-      ]
-    ],
-    "teamName": "trial2"
-  },
+{
+    "teamName": "trial",
+    "spinDate": "09/15/2019",
+   "pairs": [
+        [
+            "Oudix",
+            "Mary"
+        ],
+        [
+            "April",
+            "George"
+        ],
+        [
+            "John",
+            "Callie"
+        ],
+        [
+            "Mike",
+            "Mandy"
+        ]
+    ]
+}
+
+
 ###
 GET http://localhost:8080/api/pairs
 

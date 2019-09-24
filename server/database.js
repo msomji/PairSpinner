@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const crdentials = require('./credentials');
 
 
-mongoose.connect(`mongodb://${crdentials.databaseCredentials}@ds219308.mlab.com:19308/pair-spinner`, { useNewUrlParser: true, useUnifiedTopology: true });
+
+mongoose.connect(`mongodb://${process.env.databaseCredentials}@ds219308.mlab.com:19308/pair-spinner`, { useNewUrlParser: true, useUnifiedTopology: true });
 
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
