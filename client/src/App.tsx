@@ -5,21 +5,22 @@ import { BrowserRouter } from 'react-router-dom';
 import './App.scss';
 import PairsComponent from './Components/PairsComponent/PairsComponent';
 import TeamsComponent from './Components/TeamsComponent/TeamsComponent';
-
+import NavBar from './Components/NavBar/NavBar'
+import Footer from './Components/Footer/Footer';
 
 const App: React.FC = () => {
   return (
-    <>
-      <header>
-        <h1 className='a'>Pairing App</h1>
-      </header>
-
-      <BrowserRouter>
-        <Route exact path='/' component={TeamsComponent} />
-        <Route exact path='/:teamName' component={PairsComponent} />
-      </BrowserRouter>
-    </>
+    <div className="app">
+      <NavBar />
+      <main>
+        <BrowserRouter>
+          <Route exact path='/' component={TeamsComponent} />
+          <Route exact path='/:teamName' component={PairsComponent} />
+        </BrowserRouter>
+      </main>
+      <Footer />
+    </div>
   );
 };
 
-export default App;
+export default App;;;
