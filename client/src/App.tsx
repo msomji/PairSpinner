@@ -3,8 +3,8 @@ import { Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 
 import './App.scss';
-import PairsComponent from './Components/PairsComponent/PairsComponent';
 import TeamsComponent from './Components/TeamsComponent/TeamsComponent';
+import Profile from './Components/Profile/Profile';
 import NavBar from './Components/NavBar/NavBar'
 import Footer from './Components/Footer/Footer';
 
@@ -15,7 +15,7 @@ const App: React.FC = () => {
       <main>
         <BrowserRouter>
           <Route exact path='/' component={TeamsComponent} />
-          <Route exact path='/:teamName' component={PairsComponent} />
+          <Route exact path='/profile/:teamName' component={Profile} />
         </BrowserRouter>
       </main>
       <Footer />

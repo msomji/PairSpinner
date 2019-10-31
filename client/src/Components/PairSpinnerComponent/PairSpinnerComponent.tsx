@@ -21,7 +21,7 @@ export default function PairSpinnerComponent({ sortedPreviousPairings, teamMembe
   return (
     <>
       <p>These Would be the next pairs: </p>
-      <Pair render={true} pair={getPairs} date={new Date()}></Pair>
+      <Pair pair={getPairs} date={new Date()}></Pair>
       <button onClick={() => saveNewPairings(getPairs)}>save</button>
       <button onClick={() => reSpin()}>respin</button>
     </>

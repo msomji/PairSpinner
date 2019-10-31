@@ -9,7 +9,7 @@ interface PairsRouteParams {
   teamName: string;
 }
 
-export default function PairsComponent(props: RouteComponentProps<PairsRouteParams>) {
+export default function Profile(props: RouteComponentProps<PairsRouteParams>) {
   const [loaded, setLoaded] = useState(false);
   const [saved, setSaved] = useState(false);
   const [pairs, setPairs] = useState<Array<PairsEntity>>([]);
@@ -58,7 +58,7 @@ export default function PairsComponent(props: RouteComponentProps<PairsRoutePara
         {pairs
           .filter(team => team.teamName === props.match.params.teamName)
           .sort((current, next) => new Date(next.spinDate).getUTCSeconds() - new Date(current.spinDate).getUTCSeconds())
-          .map((team, index) => (<Pair render={true} key={index} pair={team.pairs} date={new Date(team.spinDate)}></Pair>))}
+          .map((team, index) => (<Pair key={index} pair={team.pairs} date={new Date(team.spinDate)}></Pair>))}
       </>
     );
   } else {

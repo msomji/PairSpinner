@@ -22,7 +22,7 @@ export default function TeamsComponent() {
       <>
         <p>Select your team:</p>
         <ul>
-          {teams.map((team, index) => (<li key={index}><Link to={team}>{team}</Link></li>))}
+          {teams.map((team, index) => (<li key={index}><Link to={"/profile/" +team}>{team}</Link></li>))}
         </ul>
       </>
     );
