@@ -1,0 +1,24 @@
+section.main {
+  
+  background-image: url('../../assets/images/background.png');
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  height: 80vh;
+  widows: 100%;
+  display: flex;
+  justify-content: center;
+  .cta {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .buttons-container {
+      & :first-child {
+        margin-right: 20px;
+      }
+      & :last-child {
+        margin-left: 20px;
+      }
+    }
+  }
+}

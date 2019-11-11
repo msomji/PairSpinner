@@ -1,0 +1,23 @@
+@import '../../variables.scss';
+
+button#custom-button {
+  font-family: $family-secondary;
+  height: 60px;
+  width: 220px;
+  border-radius: 20px;
+  color:$dark;
+  padding: initial;
+  -webkit-text-stroke: 0.4px rgba(44, 43, 35, 0.12);
+  &.main {
+    font-size: 45px;
+    height: 90px;
+    width: 350px;
+  }
+  &:focus  {
+    box-shadow:  0 0 0.125em rgba(255, 238, 83, 0.25)
+  }
+  &:hover  {
+    background-color: $dark;
+    color: $primary;
+  }
+}

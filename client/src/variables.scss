@@ -1,12 +1,22 @@
+@import 'typeface-ranchers';
+@import 'typeface-ropa-sans';
 
+$family-secondary: 'ropa sans';
+$family-primary: 'ranchers';
+
+$secondary-background: #EDE7B4;
 
 // bulma overrides
-$primary: #296485;
+$primary: #FFEE53;
 $info: #2E9DA7;
 // $success: $green;
 // $warning: $yellow;
 // $danger: $red;
-$light: #A0E8B1;
-$dark: #0E558B;
+$light: #FEFDF2;
+$dark: #2C2B23;
 $text: $primary;
-$card-background: #2E9DA7
+$card-background: #2E9DA7;
+
+
+
+$footer-padding: 3rem 1.5rem 3rem;

@@ -13,7 +13,7 @@ const App: React.FC = () => {
     <BrowserRouter>
       <div className="app">
         <NavBar />
-        <main>
+        <main className="has-background-light">
           <Route exact path="/" component={TeamsComponent} />
           <Route exact path="/profile/:teamName" component={Profile} />
         </main>
