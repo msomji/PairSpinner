@@ -19,7 +19,7 @@ export default function TeamsComponent() {
     return (
       <section className="main">
         <div className="cta">
-          <div className="buttons-container">
+          <div className="buttons-container is-flex-touch">
             <Button text="New Team"></Button>
             <Button text="Existing Team"></Button>
           </div>
