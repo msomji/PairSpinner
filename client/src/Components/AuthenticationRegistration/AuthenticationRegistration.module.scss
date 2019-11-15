@@ -1,0 +1,21 @@
+@import '../../variables.scss';
+
+.buttonsContainer {
+  justify-content: center;
+  display: flex;
+  margin-top: 50px;
+  
+  label {
+    width: 14em;
+    height: 3.8em;
+    border-color: $primary;
+    &:first-of-type {
+      border: 1px solid $primary;
+      border-radius: 15px 0 0 15px;
+    }
+    &:last-of-type {
+      border: 1px solid $primary;
+      border-radius: 0 15px 15px 0;
+    }
+  }
+}

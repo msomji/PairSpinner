@@ -1,0 +1,12 @@
+@import '../../variables.scss';
+
+.section {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 2fr 4fr;
+}
+.background {
+  background-image: url('../../assets/images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
