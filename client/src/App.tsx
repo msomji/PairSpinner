@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import styles from './App.module.scss'
 import LandingPage from './Components/LandingPage/LandingPage'
 import NavBar from './Components/NavBar/NavBar'
+import Footer from './Components/Footer/Footer'
 
 
 
@@ -15,12 +16,7 @@ const App: React.FC = () => {
         <main className="has-background-light">
         <Route exact path="/" component={LandingPage} />
         </main>
-        {/* <NavBar />
-        <main className="has-background-light">
-          <Route exact path="/" component={TeamsComponent} />
-          <Route exact path="/profile/:teamName" component={Profile} />
-        </main>
-        <Footer /> */}
+        <Footer />
       </div>
     </BrowserRouter>
   )

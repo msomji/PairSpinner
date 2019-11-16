@@ -1,9 +1,11 @@
 @import "../../variables.scss";
 
 .brandContainer {
-  padding-left: 2.9em;
+  justify-content: center;
+  padding-left: 3.5em;
+
   a {
-    font-size: 4.8rem;
+    font-size: 3rem;
     font-family: $family-brand;
   }
 }
