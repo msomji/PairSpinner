@@ -1,0 +1,14 @@
+
+.teamView  {
+  .buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin: 2em auto;
+    & > * {
+      min-width: 15em;
+      margin: 0 1em;
+    }
+  }
+}

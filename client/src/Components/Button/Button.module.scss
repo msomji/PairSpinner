@@ -1,0 +1,12 @@
+@import '../../variables.scss';
+
+button {
+  &#button {
+    margin: 0.6em 0;
+    height: 3.8em;
+    border-color: $primary;
+    &:focus, &:hover {
+      border-color: $primary;
+    }
+  }
+}

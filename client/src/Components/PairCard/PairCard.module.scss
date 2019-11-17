@@ -1,0 +1,20 @@
+
+
+.pairCard {
+  width: 9em;
+  height: 12em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  margin: 0.5em;
+  img {
+    margin: auto ;
+    width: 6.25em;
+    border-radius: 100%;
+  }
+  h1 {
+    margin: 0 auto auto auto;
+
+  }
+}

@@ -5,22 +5,22 @@ import Registration from '../Registration/Registration'
 import Login from '../Login/Login'
 
 const AuthenticationRegistration = () => {
-  const [isRegistration, setCurrentTab] = useState(true)
+  const [isRegistration, setIsRegistration] = useState(true)
 
-  const setCurrentClass = (tab: boolean) => (tab ? 'is-primary' : 'is-light')
+  const setIsPrimary = (tab: boolean) => (tab ? 'is-primary' : 'is-light')
 
   return (
     <div className={`${styles.container}`}>
       <div className={`${styles.buttonsContainer}`}>
-        <input onChange={() => setCurrentTab(true)} hidden type='radio' name='registerOrLogin' id='register' value='register' />
-        <input onChange={() => setCurrentTab(false)} hidden type='radio' name='registerOrLogin' id='login' value='login' />
+        <input onChange={() => setIsRegistration(true)} hidden type='radio' name='registerOrLogin' id='register' value='register' />
+        <input onChange={() => setIsRegistration(false)} hidden type='radio' name='registerOrLogin' id='login' value='login' />
 
         <div className={`has-addons`}>
-          <label className={`button ${styles.label} ${setCurrentClass(isRegistration)}`} htmlFor='register'>
+          <label className={`button ${styles.label} ${setIsPrimary(isRegistration)}`} htmlFor='register'>
             <span className='is-size-3'>New Team</span>
           </label>
 
-          <label className={`button ${styles.label} ${setCurrentClass(!isRegistration)}`} htmlFor='login'>
+          <label className={`button ${styles.label} ${setIsPrimary(!isRegistration)}`} htmlFor='login'>
             <span className='is-size-3'>Existing Team</span>
           </label>
         </div>

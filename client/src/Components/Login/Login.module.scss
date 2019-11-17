@@ -1,29 +1,12 @@
 @import '../../variables.scss';
-form#login {
 
-  h1, h2 {
+
+form#login {
+  label {
     padding-left: 0.6em;
   }
   input {
     height: 2.6em;
     margin: 0.6em 0;
-  }
-  button {
-    &.addMore {    
-      height: 3em;
-      display: block;
-
-      margin: 0.9em auto;
-      width: 9em;
-      border-color: $grey-light;
-      &:focus, &:hover {
-        border-color: $primary;
-      }
-    }
-    &.register {
-
-      margin: 0.6em 0;
-      height: 3.8em;
-    }
   }
 }

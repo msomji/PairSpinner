@@ -5,6 +5,7 @@ import styles from './App.module.scss'
 import LandingPage from './Components/LandingPage/LandingPage'
 import NavBar from './Components/NavBar/NavBar'
 import Footer from './Components/Footer/Footer'
+import TeamView from './Components/TeamView/TeamView'
 
 
 
@@ -15,6 +16,7 @@ const App: React.FC = () => {
         <NavBar/>
         <main className="has-background-light">
         <Route exact path="/" component={LandingPage} />
+        <Route exact path="/profile/:teamName" component={TeamView} />
         </main>
         <Footer />
       </div>
